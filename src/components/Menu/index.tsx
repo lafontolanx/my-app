@@ -24,6 +24,14 @@ const Menu: React.FC<IProps> = ({ onChange }) => {
         <Switch 
             onChange={toggleSwitch}
             checked={check}
+            checkedIcon={false}
+            uncheckedIcon={false}
+            height={20}
+            width={50}
+            offColor="#333"
+            onColor="#333"
+            handleDiameter={14}
+            activeBoxShadow="0 0 2px 3px #333"
         />
         </Container>
     );
