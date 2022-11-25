@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 import Menu from './components/Menu';
 
@@ -8,13 +8,24 @@ import dark from './styles/themes/dark';
 
 import GlobalStyle from './styles/globals';
 
+import { Container } from './styles';
+
 function App() {
+
+  const [theme, setTheme] = useState(light);
+
   return (
-    <div>
-      <GlobalStyle />
-      <Menu />
-      <h1>Home</h1>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Container>
+        <GlobalStyle />
+        <Menu onChange={
+          checked => {
+            setTheme(checked ? dark : light)
+          }
+        } />
+        <h1>Home</h1>
+      </Container>
+    </ThemeProvider>
   );
 }
 

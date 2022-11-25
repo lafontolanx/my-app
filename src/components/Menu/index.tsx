@@ -1,19 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import { Container } from "./styles";
 
-const Menu: React.FC = () => {
-  return (
-    <Container>
-      <h3>Tutorial de temas com React</h3>
-      <Switch 
-        onChange={() => {
-            // TODO: implementar a troca de tema
-        }}
-        checked={false} // valor estático por enquanto
-      />
-    </Container>
-  );
+import Switch from 'react-switch'
+
+interface IProps {
+    onChange: (checked: boolean) => void;
+}
+
+const Menu: React.FC<IProps> = ({ onChange }) => {
+
+    const [check, setCheck] = useState(false);
+
+    const toggleSwitch = () => {
+        let newValue = !check;
+        setCheck(newValue);
+        onChange(newValue);
+    }
+
+    return (
+        <Container>
+        <h3>Tutorial de temas com React</h3>
+        <Switch 
+            onChange={toggleSwitch}
+            checked={check}
+        />
+        </Container>
+    );
 }
 
 export default Menu;

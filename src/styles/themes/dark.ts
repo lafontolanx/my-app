@@ -4,7 +4,7 @@ const dark: DefaultTheme = {
     title: 'dark',
     colors: {
         primaryColor: '#333333',
-        secundaryColor: '#1a1a1a',
+        secondaryColor: '#1a1a1a',
         textColor: '#cccccc'
     }
 }

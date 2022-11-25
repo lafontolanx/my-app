@@ -8,5 +8,6 @@ export const Container = styled.div`
     padding: 10px;
     width: 100%;
     height: 60px;
-    background-color: #00aaff;
+    background-color: ${props => props.theme.colors.secondaryColor};
+    color: ${props => props.theme.colors.textColor};
 `
